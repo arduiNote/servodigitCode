@@ -35,4 +35,11 @@ void loop() {
 }
 
 void showDigit(int num) {
-  for (int i = 
+  for (int i = 0; i < 7; i++) {
+    if (digits[num][i]) {
+      pwm.setPWM(segments[i], 0, servoMax);
+    } else {
+      pwm.setPWM(segments[i], 0, servoMin);
+    }
+  }
+}
